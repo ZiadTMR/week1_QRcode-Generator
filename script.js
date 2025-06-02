@@ -3,7 +3,8 @@ const generateBtn = document.querySelector(".generate");
 const display = document.querySelector(".display-URL");
 generateBtn.addEventListener("click", function() {
     const websiteURL = url.value.trim();
-    if (websiteURL === '' || websiteURL !== '/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g' ) {
+    var pattern = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+    if (websiteURL === '' || !pattern.test(websiteURL)) {
         alert('Please enter a valid URL to continue.');
         websiteURL = '';
     }
