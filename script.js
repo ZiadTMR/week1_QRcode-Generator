@@ -23,8 +23,8 @@ generateBtn.addEventListener("click", function() {
             downloadBtn.addEventListener("click", function() {
             const link = document.createElement('a');
             link.href = qrImageURL;
-            link.click();
             link.download = 'qr-code.png';
+            link.click();
             });
     }
 });
